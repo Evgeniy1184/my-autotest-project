@@ -1,10 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автотестирование</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-case { margin: 10px 0; padding: 10px; border: 1px solid #ddd; }
+        .pass { background-color: #d4edda; }
+        .fail { background-color: #f8d7da; }
+    </style>
 </head>
 <body>
-$END$
+<h1>Автотесты</h1>
+<div id="test-results"></div>
+
+<script>
+    // Твои тесты будут здесь
+    function runTests() {
+        const results = document.getElementById('test-results');
+
+        // Пример теста
+        function testExample() {
+            let result = 2 + 2;
+            let testPassed = result === 4;
+
+            const testDiv = document.createElement('div');
+            testDiv.className = `test-case ${testPassed ? 'pass' : 'fail'}`;
+            testDiv.textContent = `Тест "Пример вычислений": ${testPassed ? 'Пройден' : 'Не пройден'}`;
+            results.appendChild(testDiv);
+
+            return testPassed;
+        }
+
+        // Запуск тестов
+        testExample();
+        // Добавь другие тесты здесь
+    }
+
+    // Запускаем тесты при загрузке страницы
+    window.onload = runTests;
+</script>
 </body>
 </html>
